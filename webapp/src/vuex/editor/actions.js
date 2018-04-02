@@ -37,7 +37,7 @@ export const getUserThemeList = ({commit}, type) => {
  */
 
 export const createTheme = ({commit}, type) => {
-  var theme = new Theme({type: type})
+  var theme = new Theme(type)
   commit(types.CREATE_THEME, theme)
   commit(types.SET_CUR_EDITOR_THEME, theme)
 }

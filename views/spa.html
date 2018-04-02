@@ -34,12 +34,12 @@
               <% page.elements.forEach(function (element) { %>
                 <% if (element.type === 'pic') { %>
                <% if (element.bg === 'zc') { %>
-                  <div class="bgc" style="z-index:100; position: relative; left: <%= element['left'] %>px; top: <%= element['top'] %>px;">
+                  <div class="bgc" style="z-index:100; position: relative; left: <%= element['left'] %>px; top: <%= element['top'] %>px; margin-top:36px">
                     <div class="regist">
                     <div class="cont">
                       <h1>注册享红包好礼</h1>
                       <div class="phone"><i></i><input type="text" id="mobile" placeholder="请输入手机号码"></div>
-                      <div class="code"><p><i></i><input type="text" id="captcha" placeholder="请输入图形验证码"></p><span><img src="https://test-m.yingujr.com/api/captcha/captcha"/></span></div>
+                      <div class="code"><p><i></i><input type="text" id="captcha" placeholder="请输入图形验证码"></p><span onclick="editCaptcha()" ><img class="aptchaImg" src="https://test-m.yingujr.com/api/captcha/captcha"/></span></div>
                       <div class="codetext"><p><i></i><input type="text" id="smscode" placeholder="请输入验证码"></p><span onclick="getsmscode()">获取验证码</span></div>
                       <div class="clearfix"></div>
                       <div class="password"><i></i><input type="text" id="password" placeholder="请输入密码"></div>

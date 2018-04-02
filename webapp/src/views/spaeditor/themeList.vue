@@ -4,7 +4,7 @@
     <div class="my-themes">
       <div class="container">
         <ul class="theme-list">
-          <li class="theme-item create" @click="create">
+          <li class="theme-item create" @click="createInfo">
             <div class="create-area">
               <p>创建作品</p>
             </div>
@@ -35,6 +35,25 @@
       </div>
     </div>
     <PreView :itemId="itemId" @hideView="isShowPreView=false" v-if="isShowPreView"/>
+
+
+<el-dialog title="添加活动" :visible.sync="dialogFormVisible" :modal-append-to-body="false">
+    <el-form>
+        <el-form-item label="活动名称" :label-width="formLabelWidth" >
+              <el-input v-model="title" auto-complete="off" placeholder="请输入活动名称"></el-input>
+        </el-form-item>
+        <el-form-item label="活动简介" :label-width="formLabelWidth">
+              <el-input v-model="description" auto-complete="off" placeholder="请输入活动简介"></el-input>
+        </el-form-item>
+    </el-form>
+    <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogFormVisible = false">取 消</el-button>
+        <el-button type="primary" @click="create">确 定</el-button>
+    </div>
+</el-dialog>
+
+
+
   </div>
 </template>
 
@@ -46,7 +65,11 @@
     data () {
       return {
         isShowPreView: false,
-        itemId: null
+        itemId: null,
+        title:"",
+        description:"", 
+        dialogFormVisible:false,
+        formLabelWidth:"200px"
       }
     },
     computed: {
@@ -82,8 +105,13 @@
           })
         })
       },
+      createInfo () {
+         this.dialogFormVisible = true;
+      },  
       create () {
-        this.$store.dispatch('createTheme', 'spa')
+
+       this.$store.dispatch('createTheme', {title:this.title,description:this.description,type:'spa'})
+       // this.$store.dispatch('createTheme', 'spa')
         this.$store.dispatch('addPage')
         let $this = this
         this.$store.dispatch('saveTheme', tools.vue2json(this.$store.state.editor.editorTheme)).then(() => {

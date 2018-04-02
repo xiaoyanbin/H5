@@ -202,7 +202,25 @@
         this.$store.dispatch('setEditorElement', element)
       },
       deleteListener (event) {
-        if (event.keyCode === 8 && event.target.nodeName !== 'INPUT' && event.target.nodeName !== 'TEXTAREA') {
+
+
+        if(event.keyCode === 37){
+            this.element.left = this.element.left-1;
+            return;
+        }else if(event.keyCode === 38){
+            this.element.top = this.element.top-1;
+            return;
+        }else if(event.keyCode === 39){
+            this.element.left = this.element.left+1;
+            return;
+        }else if(event.keyCode === 40){
+            this.element.top = this.element.top+1;
+            return;
+        }else if(event.keyCode === 46 && this.element.bg==!"zc"){
+            this.deleteElement();
+            return;
+        }
+        if (event.keyCode === 8 && event.target.nodeName !== 'INPUT' && event.target.nodeName !== 'TEXTAREA' &&  this.element.bg==!"zc") {
           this.deleteElement()
         }
       },

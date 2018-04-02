@@ -24,7 +24,7 @@ export default [{
 }, {
   path: '/themeList',
   name: 'themeList',
-  component: require('./views/h5editor/themeList.vue')
+  component: require('./views/spaeditor/themeList.vue')
 }, {
   path: '/spaList',
   name: 'spaList',
