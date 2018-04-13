@@ -6,22 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
   <!-- build:css css/vendor.css -->
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/index.css">
-  <script src="/js/jquery-3.2.1.min.js"></script>
-  <script src="/js/index.js"></script>
+  <link rel="stylesheet" href="/api/css/main.css">
+  <link rel="stylesheet" href="/api/css/index.css">
+  <script src="/api/js/jquery-3.2.1.min.js"></script>
+  <script src="/api/js/index.js"></script>
   <!-- endbuild -->
 </head>
 
 <body>
-  <div id="wx_pic"><img src=""></div>
+  <div id="wx_pic"></div>
 
 
   <div class="content-container">
         <% pages.forEach(function (page) { %>
             <% page.elements.forEach(function (element) { %>
               <% if (element.type === 'bg') { %>
-                <img class="ele-bg" style="width:100%" src="<%= element['imgSrc'] %>">
+                <img class="ele-bg" style="width:100%" src="/api<%= element['imgSrc'] %>">
               <% } %>
             <% }) %>
             <div class="resize-container mediate flat">
@@ -34,7 +34,7 @@
               <% page.elements.forEach(function (element) { %>
                 <% if (element.type === 'pic') { %>
                <% if (element.bg === 'zc') { %>
-                  <div class="bgc" style="z-index:100; position: relative; left: <%= element['left'] %>px; top: <%= element['top'] %>px; margin-top:36px">
+                  <div class="bgc" style="z-index:100; position: relative; left: <%= element['left'] %>px; top: <%= element['top'] %>px;">
                     <div class="regist">
                     <div class="cont">
                       <h1>注册享红包好礼</h1>
@@ -54,9 +54,9 @@
                     </div>
                 </div> 
                <% } else { %>
-                    <div class="ele" style="z-index: <%= element['zindex'] %>; width: <%= element['width'] %>px; height: <%= element['height'] %>px; left: <%= element['left'] %>px; top: <%= element['top'] %>px;">
+                    <div class="ele" style="z-index: <%= element['zindex'] %>; width: <%= element['width'] %>px; height: <%= element['height'] %>px; left: <%= element['left'] %>px; top: <%= element['top'] %>px; background-image: url('<%= element['imgSrc'] %>'); background-size:100%  ">
                       <div>
-                        <% if (element.href) { %><a target="_blank" href="http://<%= element['href'] %>"><img class="ele-img" src="<%= element['imgSrc'] %>" style="opacity: <%= element['opacity'] %>; transform: rotate(<%= element['transform'] %>deg)"></a><%} else {%><img class="ele-img" src="<%= element['imgSrc'] %>" style="opacity: <%= element['opacity'] %>; transform: rotate(<%= element['transform'] %>deg)"><%}%>
+                        <% if (element.href) { %><a target="_blank" href="http://<%= element['href'] %>"><img class="ele-img" src="<%= element['imgSrc'] %>" style="opacity: <%= element['opacity'] %>; transform: rotate(<%= element['transform'] %>deg)"></a><%} else {%><img class="ele-img" src="/api<%= element['imgSrc'] %>" style="opacity: <%= element['opacity'] %>; transform: rotate(<%= element['transform'] %>deg)"><%}%>
                       </div>
                     </div>
                   <% } %>

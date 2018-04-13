@@ -1,6 +1,3 @@
-/**
- * Created by zhengguorong on 2016/11/21.
- */
 export default class Element {
   constructor (ele = {}) {
     this.type = ele.type || 'pic'

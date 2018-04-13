@@ -1,6 +1,3 @@
-/**
- * Created by zhengguorong on 2016/11/30.
- */
 import Article from 'src/model/Article'
 import tools from '../../tools'
 const actionsInjector = require('inject!src/vuex/article/actions')

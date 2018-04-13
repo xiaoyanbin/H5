@@ -1,6 +1,3 @@
-/**
- * Created by zhengguorong on 16/11/4.
- */
 var express = require('express')
 var controller = require('./file.controller')
 const auth = require('../../auth/auth.service')

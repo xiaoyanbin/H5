@@ -1,0 +1,164 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>活动1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+  <!-- build:css css/vendor.css -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <script src="/js/jquery-3.2.1.min.js"></script>
+  <script src="/js/index.js"></script>
+  <!-- endbuild -->
+</head>
+
+<body>
+  <div id="wx_pic"><img src=""></div>
+
+
+  <div class="content-container">
+        
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+            <div class="resize-container mediate flat">
+
+            <section style="height:504px">
+
+
+
+
+              
+                
+               
+                  <div class="bgc" style="z-index:100; position: relative; left: 1px; top: 191px;">
+                    <div class="regist">
+                    <div class="cont">
+                      <h1>注册享红包好礼</h1>
+                      <div class="phone"><i></i><input type="text" id="mobile" placeholder="请输入手机号码"></div>
+                      <div class="code"><p><i></i><input type="text" id="captcha" placeholder="请输入图形验证码"></p><span onclick="editCaptcha()" ><img class="aptchaImg" src="https://test-m.yingujr.com/api/captcha/captcha"/></span></div>
+                      <div class="codetext"><p><i></i><input type="text" id="smscode" placeholder="请输入验证码"></p><span onclick="getsmscode()">获取验证码</span></div>
+                      <div class="clearfix"></div>
+                      <div class="password"><i></i><input type="text" id="password" placeholder="请输入密码"></div>
+                      <div class="error"> </div>
+                      <div class="allow">&nbsp;&nbsp; 点击注册代表您同意<a>《注册服务协议》</a></div>
+                      <input type="hidden" id="token">
+                      <div class="clearfix"></div>
+                      <div class="btn"><button onclick="login()"></button></div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    </div>
+                </div> 
+               
+                
+
+                
+              
+                
+               
+                    <div class="ele" style="z-index: 2; width: 320.91346153846155px; height: 178px; left: 0px; top: 0px;">
+                      <div>
+                        <img class="ele-img" src="/upload/all/b7c888b0362611e8960fef8f310bc436.png" style="opacity: 100; transform: rotate(0deg)">
+                      </div>
+                    </div>
+                  
+                
+
+                
+              
+                
+               
+                    <div class="ele" style="z-index: 3; width: 320.6364328551322px; height: 393px; left: 0px; top: 178px;">
+                      <div>
+                        <img class="ele-img" src="/upload/all/cce3d2e0362611e8960fef8f310bc436.png" style="opacity: 100; transform: rotate(0deg)">
+                      </div>
+                    </div>
+                  
+                
+
+                
+              
+                
+               
+                    <div class="ele" style="z-index: 4; width: 320.8563205157725px; height: 346px; left: 0px; top: 570px;">
+                      <div>
+                        <img class="ele-img" src="/upload/all/e59192a0362611e8960fef8f310bc436.png" style="opacity: 100; transform: rotate(0deg)">
+                      </div>
+                    </div>
+                  
+                
+
+                
+              
+                
+               
+                    <div class="ele" style="z-index: 5; width: 320.2203742203742px; height: 411px; left: 0px; top: 915px;">
+                      <div>
+                        <img class="ele-img" src="/upload/all/f06f6710362611e8960fef8f310bc436.png" style="opacity: 100; transform: rotate(0deg)">
+                      </div>
+                    </div>
+                  
+                
+
+                
+              
+                
+               
+                    <div class="ele" style="z-index: 6; width: 320.688469152095px; height: 556px; left: -1px; top: 1326px;">
+                      <div>
+                        <img class="ele-img" src="/upload/all/f860a2e0362611e8960fef8f310bc436.png" style="opacity: 100; transform: rotate(0deg)">
+                      </div>
+                    </div>
+                  
+                
+
+                
+              
+        </section>
+        
+      </div>
+  </div>
+  <!-- build:js scripts/vendor.js -->
+  <script>
+  (function () {
+  var designW = 320
+  var designH = 508
+  var designR = designW / designH
+
+  var actualW = document.documentElement.clientWidth
+  var actualH = document.documentElement.clientHeight
+  var actualR = actualW / actualH
+
+  var scale = (actualR > designR) ? (actualH / designH) : (actualW / designW)
+  var style = 'width: ' + designW + 'px;overflow: auto; -webkit-transform: scale(' + scale + '); transform: scale(' + scale + '); '
+  if (actualW < designW) {
+    if (actualR > designR) {
+      style += 'margin-left: ' + (actualW - designW) / 2 + 'px;'
+    } else {
+      style += '-webkit-transform-origin: left; transform-origin: left;'
+    }
+  }
+
+  var containers = document.getElementsByClassName('resize-container')
+  var i
+  for (i = 0; i < containers.length; i++) {
+    containers[i].setAttribute('style', style)
+  }
+})()
+  </script>
+  <!-- endbuild -->
+</body>
+
+</html>

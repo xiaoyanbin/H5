@@ -1,6 +1,3 @@
-/**
- * Created by zhengguorong on 2016/11/30.
- */
 import { expect } from 'chai'
 import mutations from 'src/vuex/article/mutations'
 import Article from 'src/model/Article'

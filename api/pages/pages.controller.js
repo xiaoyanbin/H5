@@ -1,6 +1,3 @@
-/**
- * Created by zhengguorong on 16/11/4.
- */
 var jsonpatch = require('fast-json-patch')
 var Pages = require('./pages.model')
 var tools = require('../../util/tools')

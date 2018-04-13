@@ -1,6 +1,3 @@
-/**
- * Created by zhengguorong on 2016/11/30.
- */
 var fs = require('fs')
 var mkdirp = require('mkdirp')
 var path = require('path')

@@ -3,7 +3,7 @@
     <PicPicker class="ele"
                @uploaded="uploadImage"></PicPicker>
 
-    <div class="ele" @click="selectedImg('http://localhost:3000/image/zc.jpg')">添加注册</div>
+    
                  
     <div class="ele"
          :style="{ backgroundImage: 'url(' + http + element.filePath + ')' }"
@@ -30,9 +30,13 @@ export default {
     }
   },
   computed: {
+    themeId () {
+        return this.$store.state.editor.editorTheme._id
+    },
     picList () {
       return this.$store.state.editor.picList
     }
+
   },
   methods: {
     uploadImage (data) {
@@ -40,7 +44,8 @@ export default {
         'imgData': data['base64'],
         'themeId': this.themeId,
         'width': data['width'],
-        'height': data['height']
+        'height': data['height'],
+        'themeId': this.themeId
       })
     }
   },

@@ -24,7 +24,7 @@
       fileChange (event) {
         let file = event.target.files[0]
         if (file) {
-          lrz(file, {quality: 0.5}).then(result => {
+          lrz(file, {quality: 1}).then(result => {
             if (result.fileLen > 2 * 1024 * 1024) {
               this.$message.error('请选择小于2M的文件')
               return

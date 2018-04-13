@@ -5,9 +5,11 @@
   "author": "",
   "private": true,
   "scripts": {
+    "stop_service": "node /data/service/YGZX/node/yg_online_node_h5_maker/app/bin/www",
     "start": "cross-env NODE_ENV=production node ./bin/www",
     "dev": "cross-env NODE_ENV=development node ./bin/www",
-    "local": "cross-env NODE_ENV=localhost node ./bin/www.js",
+    "local": "NODE_ENV=localhost node /data/service/YGZX/node/yg_online_node_h5_maker/app/bin/www.js",
+    "locals": "cross-env NODE_ENV=localhost node ./bin/www.js",
     "build": "cd webapp && node build/build.js",
     "webapp": "cd webapp && node build/dev-server.js"
   },

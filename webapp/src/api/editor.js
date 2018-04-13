@@ -1,6 +1,3 @@
-/**
- * Created by zhengguorong on 2016/11/30.
- */
 import * as http from '../util/http'
 
 const getUserThemeList = (type) => {

@@ -21,6 +21,16 @@ export const saveTheme = ({commit}, theme) => {
 }
 
 /**
+ * 获取主题内的图片
+ * @param commit
+ */
+export const getItemImg = ({commit}, type) => {
+  api.getPicListByThemeId(type).then((res) => {
+          console.log(res);
+  })
+}
+
+/**
  * 获取用户所有场景主题
  * @param commit
  */

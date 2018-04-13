@@ -1,6 +1,3 @@
-/**
- * Created by zhengguorong on 16/11/4.
- */
 var express = require('express')
 var controller = require('./pages.controller')
 const auth = require('../../auth/auth.service')
@@ -32,7 +29,13 @@ router.post('/getsmscode', (req, res, next) =>{
                   return;
                 }
                 responseData.data = JSON.parse(body); 
-                responseData.message ="成功";
+                if(responseData.data.data.status=="500"){
+                  responseData.message ="手机号已经注册";
+                }else{
+
+                  responseData.message ="短信发送成功";
+                }
+
                 res.json(responseData);
         })
   });

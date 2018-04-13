@@ -1,5 +1,4 @@
 /**
- * Created by zhengguorong on 16/11/2.
  * 用户权限认证方法
  *
  *  * Q&A
@@ -10,7 +9,9 @@
  *     当然,你也可以像官方提供示例一样,router.get('/',jwtvalidate,function(req,res,next){req.user})获取结果,但是
  *     我的路由第三个参数主要执行数据库相关操作,不想引入验证逻辑,所以在第二个参数这里完成权限的认证.
  *
+ jsonwebtoken 生成token   expressJwt 验证token 中间件是在执行后操作req对象 加入user对象
  */
+
 const jwt = require('jsonwebtoken')
 const expressJwt = require('express-jwt')
 const config = require('../config')
@@ -46,6 +47,7 @@ module.exports.isAuthenticated = () => {
                 if (user) {
                     //验证token是否过期
                     validateJwt(req, res, next);
+
                 }else{
                     return res.status(401).end();
                 }

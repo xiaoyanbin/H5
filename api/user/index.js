@@ -1,6 +1,3 @@
-/**
- * Created by zhengguorong on 16/11/1.
- */
 const express = require('express')
 const controller = require('./user.controller')
 const auth = require('../../auth/auth.service')

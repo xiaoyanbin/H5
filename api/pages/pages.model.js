@@ -1,6 +1,3 @@
-/**
- * Created by zhengguorong on 16/11/4.
- */
 const mongoose = require('mongoose')
 mongoose.Promise = require('bluebird')
 

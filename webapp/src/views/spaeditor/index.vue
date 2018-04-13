@@ -140,8 +140,8 @@
         obj.type = 'pic'
         obj.top = 0
         obj.left = 0
-        obj.width = ele.width/2
-        obj.height = ele.height/2
+        obj.width = ele.width
+        obj.height = ele.height
         obj.imgSrc = ele.filePath
         obj.loop = ele.loop
         this.$store.dispatch('addElement', obj)
@@ -236,6 +236,10 @@
     },
     mounted () {
       this.itemId = this.$route.query.itemId
+
+
+
+      
       if (this.itemId) {
         if (!this.pages) {
           this.$store.dispatch('getPageByThemeId', this.itemId)

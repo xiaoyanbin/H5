@@ -1,6 +1,4 @@
-/**
- * Created by zhengguorong on 16/11/4.
- */
+
 var Pages = require('../api/pages/pages.model')
 
 module.exports.findByLoginId = (req, res) => {

@@ -1,6 +1,3 @@
-/**
- * Created by zhengguorong on 16/11/1.
- */
 const User = require('./user.model')
 const config = require('../../config')
 const jwt = require('jsonwebtoken')
