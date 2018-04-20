@@ -7,12 +7,20 @@
         </div>
       </div>
       <div @click.stop="selectedElement(element)">
-        <PicElement :type="type" v-if="element.type==='pic'" :class="[element.playing?'animated ' + element.animatedName:'',element.loop?'infinite':'']" :element="element"
+<!--         <PicElement :type="type" v-if="element.type==='pic'" :class="[element.playing?'animated ' + element.animatedName:'',element.loop?'infinite':'']" :element="element"
                     :style="{transform:'rotate('+element.transform+'deg)','z-index':element.zindex==1?100:element.zindex,opacity:element.opacity/100,width:element.width+'px',height:element.height+'px',top:element.top+'px',left:element.left + 'px','animation-duration':element.duration + 's','-webkit-animation-duration':element.duration + 's','animation-delay':element.delay + 's','-webkit-animation-delay':element.delay + 's'}"
                     :showOperate="editorElement == element">
 
           <img style="width:100%;height:100%;" :src="element.imgSrc">
-        </PicElement>
+        </PicElement> -->
+
+        <DivElement :type="type" v-if="element.type==='pic'" :class="[element.playing?'animated ' + element.animatedName:'',element.loop?'infinite':'']" :element="element"
+                    :style="{transform:'rotate('+element.transform+'deg)','z-index':element.zindex==1?100:element.zindex,opacity:element.opacity/100,width:element.width+'px',height:element.height+'px',top:element.top+'px',left:element.left + 'px','animation-duration':element.duration + 's','-webkit-animation-duration':element.duration + 's','animation-delay':element.delay + 's','-webkit-animation-delay':element.delay + 's'}"
+                    :showOperate="editorElement == element">
+
+          <img style="width:100%;height:100%;" :src="element.imgSrc">
+        </DivElement>
+
 
         <FontElement class="element" v-if="element.type === 'text'" :element="element" :style="elementPosition(element)"></FontElement>
 
@@ -25,6 +33,7 @@
 <script>
   import PicElement from './Element/PicElement'
   import FontElement from './Element/FontElement'
+  import DivElement from './Element/DivElement'
   import ShapesElement from './Element/ShapesElement'
   import 'animate.css'
   import appConst from '../util/appConst'
@@ -64,7 +73,7 @@
       }
     },
     components: {
-      PicElement, FontElement, ShapesElement
+      PicElement, FontElement, ShapesElement,DivElement
     }
   }
 
